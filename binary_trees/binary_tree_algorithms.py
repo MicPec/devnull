@@ -3,11 +3,11 @@
 import math
 from random import randint
 
-from binary_tree import Node, traverse_recur, traverse_iter
+from binary_tree import Node, traverse_iter, traverse_recur
 
 
 def build_tree_recur(lst: list) -> Node or None:
-    """build a binary tree from an array"""
+    """build a binary tree from a list"""
     if not lst:
         return None
 
@@ -20,7 +20,7 @@ def build_tree_recur(lst: list) -> Node or None:
 
 
 def build_tree_iter(lst: list) -> Node or None:
-    """build a binary tree from an array"""
+    """build a binary tree from a list"""
     if not lst:
         return None
 
@@ -38,15 +38,15 @@ def build_tree_iter(lst: list) -> Node or None:
     return root
 
 
-def sum_tree_recur(root: Node) -> int:
+def tree_sum_recur(root: Node) -> int:
     """sum all the values in a binary tree recursively"""
     if root is None:
         return 0
 
-    return root.value + sum_tree_recur(root.left) + sum_tree_recur(root.right)
+    return root.value + tree_sum_recur(root.left) + tree_sum_recur(root.right)
 
 
-def sum_tree_iter(root: Node) -> int:
+def tree_sum_iter(root: Node) -> int:
     """sum all the values in a binary tree iteratively"""
     if root is None:
         return 0
@@ -216,20 +216,21 @@ def tree_leaf_mean(root: Node) -> float:
 
 
 def main():
-    # lst = [randint(-10, 10) for _ in range(10)]
-    lst = [1, 2, -3, 4, 5, -6, 7, 8, -9, 10, 11, -12, 13, 14, -15, 16, 17, -18, 19, 20]
-    lst = [1, 2, 3, 4, 5]
+    lst = [randint(-10, 10) for _ in range(10)]
     print(lst)
     root = build_tree_recur(lst)
-    root = build_tree_iter(lst)
+
     print("traverse_recur: ", traverse_recur(root))
     print("traverse_iter: ", traverse_iter(root))
 
-    print("sum_tree_recur: ", sum_tree_recur(root))
-    print("sum_tree_iter: ", sum_tree_iter(root))
+    print("tree_sum_recur: ", tree_sum_recur(root))
+    print("tree_sum_iter: ", tree_sum_iter(root))
 
     print("tree_min_recur: ", tree_min_recur(root))
     print("tree_min_iter: ", tree_min_iter(root))
+
+    print("tree_height_recur: ", tree_height_recur(root))
+    print("tree_height_iter: ", tree_height_iter(root))
 
     print("tree_max_path_sum_recur: ", tree_max_path_sum(root))
     print("tree_level_mean: ", tree_leaf_mean(root))

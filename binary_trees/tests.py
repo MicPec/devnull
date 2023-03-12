@@ -23,13 +23,13 @@ class TestBinaryTree(unittest.TestCase):
         root = bta.build_tree_iter(lst)
         self.assertEqual(traverse_iter(root), lst)
 
-    def test_sum_tree(self):
-        self.assertEqual(bta.sum_tree_recur(self.root), sum(self.lst))
-        self.assertEqual(bta.sum_tree_iter(self.root), sum(self.lst))
+    def test_tree_sum(self):
+        self.assertEqual(bta.tree_sum_recur(self.root), sum(self.lst))
+        self.assertEqual(bta.tree_sum_iter(self.root), sum(self.lst))
 
-    def test_sum_tree_empty(self):
-        self.assertEqual(bta.sum_tree_recur(None), 0)
-        self.assertEqual(bta.sum_tree_iter(None), 0)
+    def test_tree_sum_empty(self):
+        self.assertEqual(bta.tree_sum_recur(None), 0)
+        self.assertEqual(bta.tree_sum_iter(None), 0)
 
     def test_tree_min(self):
         self.assertEqual(bta.tree_min_recur(self.root), min(self.lst))
