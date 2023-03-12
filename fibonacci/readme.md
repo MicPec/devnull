@@ -1,1 +1,1 @@
-Sources for article at https://devnull.lol/posts/fibonacci/
+Sources for the article at https://devnull.lol/posts/fibonacci/
