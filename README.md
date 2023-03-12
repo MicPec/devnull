@@ -1,2 +1,2 @@
 # devnull
-sources an comments for https://devnull.lol 
+sources and comments for https://devnull.lol 
