@@ -7,8 +7,11 @@ class Node:
         self.left = None
         self.right = None
 
+    def __str__(self):
+        return f"Node({self.value})"
+
     def __repr__(self):
-        return self.value
+        return f"Node({self.value}, L:{self.left}, R:{self.right})"
 
 
 def init_tree() -> Node:
@@ -55,7 +58,6 @@ def traverse_iter(node):
     vals = []
 
     while queue:
-        print(queue)
         node = queue.pop(0)
         vals.append(node.value)
 
